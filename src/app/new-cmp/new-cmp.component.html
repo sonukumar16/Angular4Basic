@@ -1,0 +1,52 @@
+<p>
+    {{newcomponent}}
+ </p>
+<p>
+  new-cmp works!
+</p>
+ <p>
+    Today's Date : {{todaydate}}
+ </p>
+ <div>
+   <p>service's property</p>
+   <p>ServiceProperty : {{newcomponentproperty}}</p>
+</div>
+<!-- Angular 4 - Forms  -->
+<div style = "background-color:lawngreen"> 
+     <!-- <h4> Angular 4 - Forms ==>> Template Driven Form </h4>
+      <form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)" >
+          <input type = "text" name = "emailid" placeholder = "emailid" ngModel>
+          <br/>
+          <input type = "password" name = "passwd" placeholder = "passwd" ngModel>
+          <br/>
+          <input type = "submit" value = "submit">
+      </form> -->
+
+      <h4>Angular 4 - Forms ==>> Model Driven Form</h4>
+
+      <div>
+          <form [formGroup]="formdata" (ngSubmit) = "onClickSubmit(formdata.value)" >
+             <input type="text" class="fortextbox" name="emailid" placeholder="emailid" 
+                formControlName="emailid">
+             <br/>
+             
+             <input type="password" class="fortextbox" name="passwd" 
+                placeholder="passwd" formControlName="passwd">
+             <br/>
+             
+             <input type="submit" [disabled] = "!formdata.valid" class="forsubmit" value="Log In">
+          </form>
+       </div>
+       <p>
+          Email entered is : {{emailid}}
+       </p>
+</div>
+<!-- <div>
+  <h4>==========Animations==========</h4>
+  <div>
+      <button (click)="animate()">Click Me</button>
+      <div [@myanimation] = "state" class="rotate">
+         <img src="assets/images/img.png" width="100" height="100">
+      </div>
+   </div>
+</div> -->
